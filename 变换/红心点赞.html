@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>红心点赞</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_776209_r73ln3iv1xt.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    main {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #95a5a6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+    }
+
+    main .iconfont {
+      position: absolute;
+      font-size: 4em;
+      color: #95a5a6;
+      transition-duration: 10ms;
+    }
+
+    /* main:hover .iconfont{
+      font-size: 10em;
+      color: tomato;
+      opacity: 0;
+      transition-duration: 1s;
+    }
+
+    main:hover .iconfont:nth-of-type(2) {
+      font-size: 4em;
+      opacity: 1;
+      transition-duration: 1s;
+    } */
+
+    main.heart .iconfont{
+      transform: scale(3);
+      color: tomato;
+      opacity: 0;
+      transition-duration: 1s;
+    }
+
+    main.heart .iconfont:nth-of-type(2) {
+      transform: scale(1);
+      opacity: 1;
+      transition-duration: 1s;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <i class="iconfont icon-love-b"></i>
+    <i class="iconfont icon-love-b"></i>
+  </main>
+  <script>
+    let main = document.querySelector('main')
+    main.addEventListener('click', function () {
+      let heart = this.getAttribute('class')
+      if (heart) {
+        this.removeAttribute('class')
+      } else {
+        this.setAttribute('class', 'heart')
+      }
+    })
+  </script>
+</body>
+</html>

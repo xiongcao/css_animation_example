@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电子时钟</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #344951;
+  }
+
+  main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to right, #f1c40f, #e67e22, #e74c3c);
+    border-radius: 50%;
+    z-index: -2;
+  }
+
+  main::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #344951;
+    z-index: -1;
+  }
+
+  .line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    /* background: #000; */
+  }
+
+  .line::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 92%;
+    border-radius: 50%;
+    background: #344951;
+    z-index: 1;
+  }
+
+  .line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1;
+  }
+
+  .line > div {
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 100%;
+    background: #ecf0f1;
+  }
+
+  .line>div:nth-of-type(1) {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  .line>div:nth-of-type(2) {
+    transform: translateX(-50%) rotate(30deg);
+  }
+
+  .line>div:nth-of-type(3) {
+    transform: translateX(-50%) rotate(60deg);
+  }
+
+  .line>div:nth-of-type(4) {
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .line>div:nth-of-type(5) {
+    transform: translateX(-50%) rotate(120deg);
+  }
+
+  .line>div:nth-of-type(6) {
+    transform: translateX(-50%) rotate(150deg);
+  }
+
+  .hour {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 5px;
+    height: 12%;
+    background: #fff;
+    transform-origin: bottom;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: 60s;
+  }
+
+  .minute {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 3px;
+    height: 20%;
+    background: #fff;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 1;
+    transition: 60s;
+  }
+
+  .second {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 1px;
+    height: 30%;
+    background: #fff;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(90deg);
+    z-index: 1;
+    transition: 60s;
+  }
+
+  body:hover .second {
+    transform: translateX(-50%) rotate(3600deg);
+  }
+
+  body:hover .minute {
+    transform: translateX(-50%) rotate(60deg);
+  }
+
+  body:hover .hour {
+    transform: translateX(-50%) rotate(15deg);
+  }
+
+</style>
+
+<body>
+  <main>
+    <div class="line">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+  </main>
+</body>
+
+</html>

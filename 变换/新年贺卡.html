@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贺卡</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #344951;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 200px;
+      background: #f39c12;
+      font-size: 1.5em;
+      color: #ecf0f1;
+      transform-style: preserve-3d;
+      transform: perspective(900px) rotateX(45deg);
+    }
+
+    .card::before, .card::after {
+      position: absolute;
+      top: 0;
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      background: #e74c3c;
+      transition: 2s;
+      box-sizing: border-box;
+    }
+
+    .card::before {
+      content: '新年';
+      left: 0;
+      justify-content: flex-end;
+      transform-origin: left;
+      border-right: 2px solid #34495e;
+      padding-right: 10px;
+    }
+
+    .card::after {
+      content: '快乐';
+      right: 0;
+      justify-content: flex-start;
+      transform-origin: right;
+      border-left: 2px solid #34495e;
+      padding-left: 10px;
+    }
+
+    .card:hover::before {
+      transform: rotateY(-180deg);
+    }
+
+    .card:hover::after {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">小熊，您好！</div>
+</body>
+</html>

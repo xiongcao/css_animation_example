@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平排列及换行</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: wheat;
+      padding: 20px;
+    }
+
+    main {
+      width: 300px;
+      height: 500px;
+      display: flex;
+      /* 按照 行排列 */
+      flex-direction: row;
+      /* 是否换行 wrap：换行、nowrap：不换行，会被等比例压缩 */
+      flex-wrap: wrap;
+      /* 合并写法 */
+      /* flex-flow: row wrap; */
+      border: 5px solid #e74c3c;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background: blueviolet;
+      color: #ffffff;
+      font-size: 4em;
+      padding: 10px;
+      background-clip: content-box;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </main>
+</body>
+</html>

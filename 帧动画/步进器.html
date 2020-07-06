@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>步进器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    main {
+      width: 410px;
+      height: 410px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    main div {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f1c40f;
+      margin: 1px;
+      font-size: 1.2em;
+      color: white;
+    }
+
+    div:nth-child(1)::before, div:nth-child(5)::before, div:nth-child(9)::before, div:nth-child(13)::before {
+      content: '把你的小手放上来试试！';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      animation-name: translate;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-play-state: paused;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    div:nth-child(1)::before {
+      background: #16a085;
+      animation-timing-function: steps(4, start);
+    }
+
+    div:nth-child(5)::before {
+      background: #3498db;
+      animation-timing-function: steps(4, end);
+    }
+
+    div:nth-child(9)::before {
+      background: #c0392b;
+      animation-timing-function: step-start;
+    }
+
+    div:nth-child(13)::before {
+      background: #8e44ad;
+      animation-timing-function: step-end;
+    }
+
+    div:nth-child(9)::before, div:nth-child(13)::before {
+      animation-name: translate2;
+      animation-duration: 2s;
+      font-size: 1em;
+    }
+
+    main:hover div::before {
+      animation-play-state: running;
+    }
+
+    @keyframes translate {
+      to {
+        transform: translateX(408px);
+      }
+    }
+
+    @keyframes translate2 {
+      50% {
+        transform: translateX(102px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>steps(4, start)</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>steps(4, end)</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>step-start</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>step-end</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+  </main>
+</body>
+</html>

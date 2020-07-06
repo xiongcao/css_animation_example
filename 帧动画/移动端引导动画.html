@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #344951;
+    }
+
+    main {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      transform: scale(0);
+      background-color: #34495e;
+      animation-name: scale, bg, radius;
+      animation-duration: 2s, 2s, 2.5s;
+      animation-fill-mode: forwards;
+      /* 2: 循环两次； infinite: 无限循环 */
+      animation-iteration-count: infinite;
+    }
+    main::after {
+      content: 'xiongchao.com';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: white;
+      opacity: 0;
+      animation-duration: 2s;
+      animation-name: opacity;
+      animation-fill-mode: forwards;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes opacity {
+      100% {
+        opacity: .8
+      }
+    }
+
+    @keyframes scale {
+      25% {
+        transform: scale(0.5);
+      }
+
+      50% {
+        transform: scale(1) rotate(360deg);
+      }
+
+      75% {
+        transform: scale(0.5);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bg {
+      25% {
+        background: #e67e22;
+      }
+
+      50% {
+        background: #2980b9
+      }
+
+      75% {
+        background: #c0392b;
+      }
+
+      100% {
+        background: #27ae60;
+      }
+    }
+
+    @keyframes radius {
+      25% {
+        border-radius: 15%;
+      }
+
+      50% {
+        border-radius: 30%;
+      }
+
+      75% {
+        border-radius: 15%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+</body>
+</html>

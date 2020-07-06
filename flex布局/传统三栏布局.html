@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>传统三栏布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    main {
+      height: 100vh;
+      background: wheat;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 50px;
+      line-height: 50px;
+      background: linear-gradient(to bottom ,#f3f3f3, #ddd, #f3f3f3);
+    }
+
+    footer div {
+      float: left;
+      width: 33%;
+      text-align: center;
+    }
+
+    div:nth-of-type(n+2) {
+      border-left: 2px solid #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+  <footer>
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+  </footer>
+</body>
+</html>

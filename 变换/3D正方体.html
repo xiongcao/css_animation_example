@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D正方体</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    main {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transition: 2s;
+      transform-style: preserve-3d;
+      transform-origin: center center -100px;
+      transform: perspective(900px) rotateX(-45deg) rotateY(45deg);
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #27ae60;
+      transform-origin: center center -100px;
+      font-size: 3em;
+      color: white;
+      opacity: .6;
+    }
+
+    div:nth-of-type(1) {
+      transform: rotateY(0deg);
+      background: #16a085;
+    }
+
+    div:nth-of-type(2) {
+      transform: rotateY(90deg);
+      background: #e74c3c;
+    }
+
+    div:nth-of-type(3) {
+      transform: rotateY(180deg);
+      background: #f39c12;
+    }
+
+    div:nth-of-type(4) {
+      transform: rotateY(270deg);
+      background: #2980b9;
+    }
+
+    div:nth-of-type(5) {
+      transform: rotateX(90deg);
+      background: #f1c40f;
+    }
+
+    div:nth-of-type(6) {
+      transform: rotateX(-90deg);
+      background: #8e44ad;
+    }
+
+    body:hover main {
+      transform: perspective(900px) rotateX(180deg) rotateY(150deg);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </main>
+</body>
+
+</html>

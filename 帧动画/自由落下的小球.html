@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自由落下的小球</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      background-color: #344951;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(at center, #e67e22, #e74c3c, #c0392b);
+      border-radius: 50%;
+      animation-name: ball;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes ball {
+      0%{
+        transform: translateY(0);
+        transition-timing-function: ease-in;
+      }
+
+      30%{
+        transform: translateY(20vh);
+        transition-timing-function: ease-in;
+      }
+
+      60%{
+        transform: translateY(40vh);
+        transition-timing-function: ease-in;
+      }
+
+      85%{
+        transform: translateY(60vh);
+        transition-timing-function: ease-in;
+      }
+
+      98%{
+        transform: translateY(75vh);
+        transition-timing-function: ease-in;
+      }
+
+      15%,45%,75%,95%,100% {
+        transform: translateY(80vh);
+        transition-timing-function: ease-out;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

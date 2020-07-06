@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>速率变化效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      background-color: #344951;
+    }
+
+    ul {
+      flex: 1;
+      display: flex;
+    }
+
+    ul li {
+      flex: 1;
+      margin-right: 10px;
+      background: #e67e22;
+      animation-name: move;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      font-size: 1.2em;
+      color: white;
+    }
+
+    li:last-child {
+      animation-timing-function: ease;
+    }
+
+    li:nth-child(2) {
+      animation-timing-function: ease-in;
+    }
+
+    li:nth-child(3) {
+      animation-timing-function: ease-in-out;
+    }
+
+    li:nth-child(4) {
+      animation-timing-function: ease-out;
+    }
+
+    li:nth-child(5) {
+      animation-timing-function: linear;
+    }
+
+    li:last-child {
+      margin-right: 0;
+      animation-timing-function: cubic-bezier(0,0,0.25,1);
+    }
+
+    @keyframes move {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>ease</li>
+    <li>ease-in</li>
+    <li>ease-in-out</li>
+    <li>ease-out</li>
+    <li>linear</li>
+    <li>cubic-bezier</li>
+  </ul>
+</body>
+</html>

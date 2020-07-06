@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>填充模式</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      width: 500px;
+      height: 100px;
+    }
+
+    ul li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      background: #e67e22;
+      border-radius: 50%;
+      animation-name: scale;
+      animation-duration: 2s;
+      animation-delay: 2s;
+    }
+
+    /* 延迟时间内使用 from 作为初始状态 */
+    li:nth-child(2) {
+      animation-fill-mode: backwards;
+    }
+
+    /* 动画结束后 使用 to 作为结束状态 */
+    li:nth-child(3) {
+      animation-fill-mode: forwards;
+    }
+
+    /* 延迟时间内使用 from 作为初始状态，动画结束后 使用 to 作为结束状态 */
+    li:nth-child(4) {
+      animation-fill-mode: both;
+    }
+
+    @keyframes scale {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+        background: #c0392b;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>normal</li>
+    <li>backwards</li>
+    <li>forwards</li>
+    <li>both</li>
+  </ul>
+</body>
+</html>

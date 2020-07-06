@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提交按钮加载中动画</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    button {
+      width: 200px;
+      height: 60px;
+      font-size: 1.6em;
+    }
+
+    button::after {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      animation-name: loading;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes loading {
+      from {
+        box-shadow: 0;
+      }
+      30% {
+        box-shadow: 3px 0 0 currentColor;
+      }
+
+      60% {
+        box-shadow: 3px 0 0 currentColor, 9px 0 0 currentColor;
+      }
+
+      90% {
+        box-shadow: 3px 0 0 currentColor, 9px 0 0 currentColor, 15px 0 0 currentColor;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button>提交</button>
+</body>
+
+</html>

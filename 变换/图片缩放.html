@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片缩放</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #344951;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+    }
+
+    main div, img {
+      width: 160px;
+      height: 160px;
+    }
+
+    main div {
+      margin-right: 20px;
+      transition: 1s;
+    }
+
+    /* main:hover div {
+      filter: blur(5px);
+      transform: scale(.6);
+    }
+
+    main:hover div:hover {
+      transform: scale(1.6);
+      filter: none;
+    } */
+
+    div > img {
+      filter: blur(2px);
+      transition: 1s;
+    }
+
+    img:hover {
+      filter: none;
+      transform: scale(1.2);
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <div><img src="./images/1.jpg"></div>
+    <div><img src="./images/2.jpg"></div>
+    <div><img src="./images/3.jpg"></div>
+  </main>
+</body>
+
+</html>

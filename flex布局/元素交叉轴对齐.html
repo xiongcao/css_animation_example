@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单个元素交叉轴对齐</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: wheat;
+      padding: 20px;
+    }
+
+    main {
+      width: 400px;
+      height: 500px;
+      display: flex;
+      /* 按照 行排列 */
+      flex-direction: row;
+      /* 是否换行 wrap：换行、nowrap：不换行，会被等比例压缩 */
+      flex-wrap: wrap;
+      /* 合并写法 */
+      /* flex-flow: row wrap; */
+
+      /* 
+        主轴的对齐方式
+        flex-start:  最左边开始依次排列
+          flex-end:  依次排列到最右边
+            center:  中间无间隙，整体居中
+            evenly:  中间两边间隙相等；
+           between:  两边无间隙，中间间隙相等；
+            around:  两边间隙相等，中间间隙翻倍。
+       */
+      justify-content: space-between;
+
+      /* 
+        交叉轴的整体对齐方式，将子元素当做一个整体进行排列
+        flex-start:  顶部对齐
+          flex-end:  底部对齐
+            center:  居中对齐
+           stretch:  高度填充
+      */
+      align-items: flex-end;
+
+      border: 5px solid #e74c3c;
+    }
+
+    div:first-child {
+      align-self: flex-start;
+    }
+
+    div:nth-child(2) {
+      align-self: center;
+    }
+
+    div:last-child {
+      align-self: flex-end;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background: blueviolet;
+      color: #ffffff;
+      font-size: 4em;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </main>
+</body>
+</html>

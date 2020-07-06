@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移动端视图切换</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_776209_r73ln3iv1xt.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::after {
+      content: "小熊欢迎您！";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2em;
+      opacity: .3;
+    }
+
+    main {
+      position: relative;
+      flex: 1;
+    }
+
+    nav {
+      height: 8vh;
+      background: #34495e;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.5em;
+      opacity: .8;
+      text-transform: uppercase;
+      flex: 1;
+      text-align: center;
+    }
+
+    nav a:nth-child(2) {
+      border-left: 1px solid silver;
+      border-right: 1px solid silver;
+    }
+
+    main > div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: 1s;
+    }
+
+    main > div > i{
+      font-size: 8em!important;
+      color: #fff;
+    }
+
+    main > div:target {
+      transform: translateY(0);
+    }
+
+    main>div:nth-of-type(1):target {
+      background: #27ae60;
+    }
+
+    main>div:nth-of-type(2):target {
+      background: #e67e22;
+    }
+
+    main>div:nth-of-type(3):target {
+      background: #2980b9;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="home">
+      <i class="icon-shouye iconfont"></i>
+    </div>
+    <div id="video">
+      <i class="icon-shipinbofangyingpian2 iconfont"></i>
+    </div>
+    <div id="live">
+      <i class="icon-zhibo iconfont"></i>
+    </div>
+  </main>
+  <nav>
+    <a href="#home">home</a>
+    <a href="#video">video</a>
+    <a href="#live">live</a>
+  </nav>
+</body>
+
+</html>

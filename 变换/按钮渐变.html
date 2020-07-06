@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>按钮渐变</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    main {
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      position: relative;
+      height: 55px;
+      overflow: hidden;
+      color: snow;
+      font-size: 1.5em;
+      text-decoration: none;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #e74c3c;
+      cursor: pointer;
+    }
+
+    .btn::after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 100%;
+      background: tomato;
+      z-index: -1;
+      transform: skew(45deg);
+      transition: .3s;
+    }
+
+    .btn:hover::after {
+      width: 200%;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <main>
+    <span class="btn">xiaoxiong</span>
+  </main>
+</body>
+
+</html>

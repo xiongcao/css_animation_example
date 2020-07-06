@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直三栏布局</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: wheat;
+    }
+
+    header {
+      height: 50px;
+      background: #8e44ad;
+    }
+
+    main {
+      /* 
+        放大: flex-grow; 
+        缩小: flex-shrink 
+        基准尺寸: flex-basis 
+      */
+      flex: 1;
+      background: #f1c40f;
+    }
+
+    footer {
+      /* 主轴的基准尺寸：主轴为横向是为width， 纵向时为height */
+      flex-basis: 50px;
+      min-height: 50px;
+      /* height: 50px; */
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header>#header</header>
+  <main>#main
+  </main>
+  <footer>#footer</footer>
+</body>
+</html>

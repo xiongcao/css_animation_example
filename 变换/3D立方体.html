@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D立方体</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    main {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      transition: 5s;
+      transform-style: preserve-3d;
+      transform-origin: center center -100px;
+      transform: perspective(900px) rotateX(-45deg) rotateY(45deg);
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      font-size: 3em;
+      color: white;
+      opacity: .6;
+    }
+
+    /* 前四个 */
+    div:nth-child(-n+4) {
+      left: 0;
+      width: 400px;
+      transform-origin: center center -100px;
+    }
+
+    div:nth-child(1) {
+      transform: rotateX(0);
+      background: #16a085;
+    }
+
+    div:nth-child(2) {
+      transform: rotateX(90deg);
+      background: #e74c3c;
+    }
+
+    div:nth-of-type(3) {
+      transform: rotateX(180deg);
+      background: #f39c12;
+    }
+
+    div:nth-of-type(4) {
+      transform: rotateX(270deg);
+      background: #2980b9;
+    }
+
+    div:nth-of-type(5) {
+      left: 0;
+      width: 200px;
+      background: #f1c40f;
+      transform-origin: right;
+      transform: translateX(-200px) rotateY(-90deg);
+    }
+
+    div:nth-of-type(6) {
+      right: 0;
+      width: 200px;
+      background: #8e44ad;
+      transform-origin: left;
+      transform: translateX(200px) rotateY(90deg);
+    }
+
+    body:hover main {
+      transform: perspective(900px) rotateX(360deg) rotateY(30deg);
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- 长方形四个面 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <!-- 左面 正方形 -->
+    <div>5</div>
+    <!-- 右面 正方形 -->
+    <div>6</div>
+  </main>
+</body>
+
+</html>

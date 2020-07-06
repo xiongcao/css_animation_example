@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跳动的心</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #e74c3c;
+      opacity: .5;
+      transform: rotate(45deg) scale(.5);
+      animation-name: jump;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    .heart::before {
+      content: ' ';
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #e74c3c;
+      transform: translateX(-50%)
+    }
+
+    .heart::after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #e74c3c;
+      transform: translateY(-50%)
+    }
+
+    @keyframes jump {
+      25% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: rotate(45deg) scale(.5)
+      }
+
+      75% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>
