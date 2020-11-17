@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西天取经</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #344951;
+    }
+
+    div {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      padding: 10px;
+      margin-left: -80px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, .5);
+      text-align: center;
+      color: #e2dfdf;
+      font-size: 16px;
+      letter-spacing: .5px;
+      /* opacity: 0; */
+    }
+
+    .tips {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 768px;
+      background: url('../images/bg.jpg');
+      background-size: cover;
+      animation: bj 30s linear infinite;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 1000px;
+      height: 100%;
+    }
+
+    @keyframes bj {
+      to {
+        background-position-x: 1920px;
+      }
+    }
+    
+    li {
+      width: 200px;
+      height: 180px;
+      margin-bottom: 220px;
+      margin-left: 50px;
+      overflow: hidden;
+    }
+
+    li:nth-of-type(1) {
+      margin-left: 0;
+      background: url('../images/wk.png');
+      animation: animation1 1s linear infinite;
+      animation-timing-function: steps(8, end);
+    }
+    
+    li:nth-of-type(2) {
+      background: url('../images/bj.png');
+      animation: animation1 1s linear infinite;
+      animation-timing-function: steps(8, end);
+    }
+
+    @keyframes animation1 {
+      to {
+        background-position-x: -1600px;
+      }
+    }
+
+    li:nth-of-type(3) {
+      width: 180px;
+      margin-bottom: 250px;
+      background: url('../images/ts.png');
+      animation: ts 1s linear infinite;
+      animation-timing-function: steps(8, end);
+    }
+
+    @keyframes ts {
+      to {
+        background-position-x: -1360px;
+      }
+    }
+
+    li:nth-of-type(4) {
+      background: url('../images/ss.png');
+      animation: ss 1s linear infinite;
+      animation-timing-function: steps(8, end);
+    }
+
+    @keyframes ss {
+      to {
+        background-position-x: -1680px;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <main>
+    <ul>
+      <li id="wk"></li>
+      <li id="bj"></li>
+      <li id="ts"></li>
+      <li id="ss"></li>
+    </ul>
+  </main>
+  <div id="mask">点击任意地方播放音乐</div>
+  <audio id="audio" loop>
+    <source src="../images/敢问路在何方.mp3" type="audio/mpeg" />
+  </audio>
+  <script>
+
+    const $mask = document.getElementById('mask');
+    document.addEventListener('DOMContentLoaded', function () {
+      const time1 = setTimeout(() => {
+        $mask.setAttribute('class', 'tips');
+        clearTimeout(time1);
+      }, 100)
+
+      const time2 = setTimeout(() => {
+        $mask.style.display = 'none';
+        clearTimeout(time2);
+      }, 2000)
+    })
+
+    document.addEventListener('click', function () {
+      function audioAutoPlay() {
+        var audio = document.getElementById('audio');
+        if (audio !== null) {
+          //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
+          if (audio.paused) {
+            audio.play(); 
+          } else {
+            audio.pause();// 这个就是暂停
+          }
+        }
+      }
+      audioAutoPlay();
+    });
+  </script>
+</body>
+
+</html>
